@@ -1,0 +1,13 @@
+const request = require('request');
+
+const options = {
+  method: 'GET',
+  url: 'https://jiratoken234.atlassian.net/rest/api/3/project',
+  auth: { username: 'balkumarsameer@gmail.com', password: 'BhGm5YBqeuFU89gOLgoU71A1' },
+  headers: { Accept: 'application/json' }
+};
+
+request(options, (err, { statusCode } = {}, body) => {
+  if (err || statusCode !== 200) throw err;
+  const projects = JSON.parse(body);
+});
